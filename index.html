@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jejak Digital - Simulasi Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-search" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"/><path d="M16.5 16.5 21 21"/>
+            </symbol>
+            <symbol id="i-share" viewBox="0 0 24 24">
+                <circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/>
+                <path d="M8.2 10.8 15.7 7M8.2 13.2 15.7 17"/>
+            </symbol>
+            <symbol id="i-bag" viewBox="0 0 24 24">
+                <path d="M5.5 8h14l-1.2 12.5H6.7z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/>
+            </symbol>
+            <symbol id="i-pin" viewBox="0 0 24 24">
+                <path d="M12 21.5s-7-6.3-7-11a7 7 0 0 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10.5" r="2.5"/>
+            </symbol>
+            <symbol id="i-play" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10.5 9.8v4.4L14.5 12z"/>
+            </symbol>
+            <symbol id="i-mail" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7.5 12 13l8.5-5.5"/>
+            </symbol>
+            <symbol id="i-scan" viewBox="0 0 24 24">
+                <path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16"/><path d="M4 12h16"/>
+            </symbol>
+            <symbol id="i-target" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2"/>
+            </symbol>
+            <symbol id="i-unlock" viewBox="0 0 24 24">
+                <rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.8-1.3"/>
+            </symbol>
+            <symbol id="i-eye" viewBox="0 0 24 24">
+                <path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/>
+            </symbol>
+            <symbol id="i-alert" viewBox="0 0 24 24">
+                <path d="M12 3.5 2.8 19.5h18.4z"/><path d="M12 9.5V14"/><circle cx="12" cy="16.6" r="0.4"/>
+            </symbol>
+            <symbol id="i-shield" viewBox="0 0 24 24">
+                <path d="M12 3l7 2.8v5.4c0 4.8-3.4 7.7-7 8.8-3.6-1.1-7-4-7-8.8V5.8z"/><path d="M9.3 12.1l2 2 3.6-4.2"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <div id="page-transition" class="page-transition" aria-hidden="true">
+        <span class="page-transition-panel page-transition-panel-left"></span>
+        <span class="page-transition-panel page-transition-panel-right"></span>
+        <div class="page-transition-core">
+            <div class="pt-blackhole">
+                <span class="pt-ring pt-ring-a"></span>
+                <span class="pt-ring pt-ring-b"></span>
+                <span class="pt-core"></span>
+            </div>
+            <div class="page-transition-mark">JD.</div>
+            <div class="page-transition-name">JEJAK DIGITAL</div>
+            <div class="page-transition-sub">INITIALIZING / DIGITAL PRIVACY EXPERIENCE</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="masthead-eyebrow">
+                <span class="case-no">Berkas No. JD-2026</span>
+                <span>Simulasi Privasi Digital — Edisi Interaktif</span>
+            </div>
+            <h1>Jejak <span class="outline">Digital</span></h1>
+            <p class="subtitle">Pahami bagaimana data pribadi Anda dikumpulkan dan digunakan secara real-time — langsung dari browser Anda sendiri.</p>
+            <p class="course-line">Project Akhir — Mata Kuliah: <strong>Pemikiran Kritis dan Kreatif</strong></p>
+            <p class="course-line">Dosen Pengampu: <strong>Zulkarnaini, SE., M.Si.Ak.CA</strong></p>
+            <div class="meta-strip">
+                <div><span class="live-dot"></span>Status: <strong>Rekaman Aktif</strong></div>
+                <div>Subjek: <strong>Anda</strong></div>
+                <div>Cakupan: <strong>6 Aktivitas</strong></div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="problem-section">
+                <p class="eyebrow danger">01 / Masalah</p>
+                <h2>Setiap Klik Meninggalkan Bukti</h2>
+                <p class="problem-statement">Setiap pencarian, posting, belanja, dan lokasi yang Anda bagikan meninggalkan <strong>jejak digital permanen</strong>. Tanpa sadar, Anda menyerahkan ribuan data pribadi ke platform online yang bisa dipakai untuk:</p>
+                <div class="problem-grid">
+                    <div class="problem-card">
+                        <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-scan"/></svg></div>
+                        <h4>Profiling</h4>
+                        <p>Membuat profil lengkap tentang preferensi, kebiasaan, lokasi, dan pola hidup Anda</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-target"/></svg></div>
+                        <h4>Targeted Ads</h4>
+                        <p>Iklan disesuaikan dengan data pribadi untuk pengaruhi keputusan belanja</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-unlock"/></svg></div>
+                        <h4>Data Breaches</h4>
+                        <p>Data bisa bocor akibat hacking dan dijual di dark web</p>
+                    </div>
+                    <div class="problem-card">
+                        <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-eye"/></svg></div>
+                        <h4>Digital Tracking</h4>
+                        <p>Dilacak lintas platform, bahkan tanpa login, via browser fingerprinting</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="problem-solving-section">
+                <p class="eyebrow">01.5 / Pemecahan Masalah</p>
+                <h2>Proses Pemikiran Kritis & Kreatif</h2>
+                <p class="section-desc">Konsep pemecahan masalah terstruktur yang terintegrasi dengan mata kuliah <strong>Pemikiran Kritis dan Kreatif</strong>.</p>
+                <div class="problem-solving-steps">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Definisi Masalah</h4>
+                            <p><strong>Pemikiran Kritis:</strong> Mengidentifikasi inti masalah — jejak digital yang tidak terkendali. Memisahkan fakta dari asumsi: data yang dikumpulkan, siapa yang mengumpulkan, dan bagaimana data digunakan.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Analisis Akar Masalah</h4>
+                            <p><strong>Pemikiran Kritis:</strong> Menanyakan "Mengapa?" berulang kali. Mengapa platform mengumpulkan data? Mengapa pengguna setuju? Mengapa regulasi belum melindungi cukup? Analisis sistemik, bukan hanya individu.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Generasi Solusi Kreatif</h4>
+                            <p><strong>Pemikiran Kreatif:</strong> Brainstorming solusi tanpa batas terlebih dahulu. Tidak langsung mengevaluasi. Kumpulkan ide: teknologi, perilaku, pendidikan, kebijakan.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Evaluasi & Seleksi Solusi</h4>
+                            <p><strong>Pemikiran Kritis:</strong> Evaluasi ide berdasarkan kriteria: efektivitas, kelayakan, etika, dampak. Pilih solusi terbaik berdasarkan data, bukan preferensi pribadi.</p>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>Implementasi & Penilaian</h4>
+                            <p><strong>Pemikiran Kreatif & Kritis:</strong> Merancang tindakan nyata dan mengukur hasilnya. Apakah solusi benar-benar mengurangi masalah? Apa dampak sampingannya?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem-solving-table">
+                    <h4>Tabel Pemecahan Masalah Privasi Digital</h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Langkah</th>
+                                <th>Pertanyaan Kritis</th>
+                                <th>Ide Kreatif</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1. Definisi</td>
+                                <td>Apa yang sebenarnya terjadi pada data saya?</td>
+                                <td>Data pribadi = aset digital yang perlu dilindungi</td>
+                            </tr>
+                            <tr>
+                                <td>2. Akar Masalah</td>
+                                <td>Siapa yang bertanggung jawab dan mengapa?</td>
+                                <td>Sistem ekonomi attention & data-driven advertising</td>
+                            </tr>
+                            <tr>
+                                <td>3. Solusi</td>
+                                <td>Apa solusi realistis dan ideal?</td>
+                                <td>VPN + tracker blocker + awareness + regulasi</td>
+                            </tr>
+                            <tr>
+                                <td>4. Evaluasi</td>
+                                <td>Apakah solusi ini efektif untuk semua orang?</td>
+                                <td>Perlu edukasi massal + tools yang mudah diakses</td>
+                            </tr>
+                            <tr>
+                                <td>5. Penilaian</td>
+                                <td>Bagaimana mengukur keberhasilan?</td>
+                                <td>Reduksi data terkumpul, peningkatan kesadaran</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="interaction-section">
+                <p class="eyebrow">02 / Interaksi</p>
+                <h2>Ruang Simulasi</h2>
+                <p>Simulasikan aktivitas online Anda. Setiap klik akan menunjukkan data apa yang dikumpulkan tentang Anda.</p>
+                <div class="interaction-cta">
+                    <button id="startBtn" class="btn-primary">Mulai Simulasi Interaktif</button>
+                    <p class="interaction-info">6 aktivitas online umum / data real-time</p>
+                </div>
+            </section>
+
+            <div id="simulation" class="hidden">
+                <section class="activity-section">
+                    <p class="eyebrow">03 / Aktivitas</p>
+                    <h2>Pilih Aktivitas Online</h2>
+                    <p class="section-desc">Klik setiap aktivitas — perhatikan bagaimana data Anda terkumpul secara real-time.</p>
+                    <div class="activity-grid">
+                        <div class="activity-card" data-activity="search">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-search"/></svg></div>
+                            <h3>Pencarian</h3>
+                            <p>Cari sesuatu di Google</p>
+                            <button class="btn-activity">Lakukan</button>
+                        </div>
+                        <div class="activity-card" data-activity="social">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-share"/></svg></div>
+                            <h3>Media Sosial</h3>
+                            <p>Post di Instagram/TikTok</p>
+                            <button class="btn-activity">Lakukan</button>
+                        </div>
+                        <div class="activity-card" data-activity="shop">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-bag"/></svg></div>
+                            <h3>Belanja Online</h3>
+                            <p>Beli di Tokopedia/Shopee</p>
+                            <button class="btn-activity">Lakukan</button>
+                        </div>
+                        <div class="activity-card" data-activity="location">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-pin"/></svg></div>
+                            <h3>Berbagi Lokasi</h3>
+                            <p>Check-in di suatu tempat</p>
+                            <button class="btn-activity">Lakukan</button>
+                        </div>
+                        <div class="activity-card" data-activity="video">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-play"/></svg></div>
+                            <h3>Tonton Video</h3>
+                            <p>Streaming di YouTube</p>
+                            <button class="btn-activity">Lakukan</button>
+                        </div>
+                        <div class="activity-card" data-activity="email">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-mail"/></svg></div>
+                            <h3>Email &amp; Chat</h3>
+                            <p>Kirim pesan pribadi</p>
+                            <button class="btn-activity">Lakukan</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="realdata-section">
+                    <p class="eyebrow danger">04 / Barang Bukti</p>
+                    <h2>Data Real-Time Anda Saat Ini</h2>
+                    <p class="section-desc">Ini adalah data NYATA yang sedang dikumpulkan dari browser Anda sekarang juga:</p>
+                    <div class="term-bar"><span class="live-dot"></span>Live Feed — Browser Anda</div>
+                    <div class="realdata-grid">
+                        <div class="realdata-item">
+                            <span class="realdata-label">IP Address</span>
+                            <span id="real-ip" class="realdata-value">Memuat...</span>
+                        </div>
+                        <div class="realdata-item">
+                            <span class="realdata-label">Koordinat GPS</span>
+                            <span id="real-gps" class="realdata-value">Memuat...</span>
+                        </div>
+                        <div class="realdata-item">
+                            <span class="realdata-label">Kota</span>
+                            <span id="real-city" class="realdata-value">Memuat...</span>
+                        </div>
+                        <div class="realdata-item">
+                            <span class="realdata-label">Negara</span>
+                            <span id="real-country" class="realdata-value">Memuat...</span>
+                        </div>
+                        <div class="realdata-item">
+                            <span class="realdata-label">ISP</span>
+                            <span id="real-isp" class="realdata-value">Memuat...</span>
+                        </div>
+                        <div class="realdata-item">
+                            <span class="realdata-label">User Agent</span>
+                            <span id="real-ua" class="realdata-value">Memuat...</span>
+                        </div>
+                    </div>
+                    <p class="warning-text"><strong>PERHATIAN:</strong> Data di atas adalah informasi NYATA Anda yang bisa diakses website manapun.</p>
+                </section>
+
+                <section class="data-section">
+                    <p class="eyebrow">05 / Akumulasi</p>
+                    <h2>Data yang Terkumpul</h2>
+                    <div class="data-tracker">
+                        <div class="data-item">
+                            <span class="data-label">Preferensi</span>
+                            <span id="preferences-count" class="data-count">0</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Lokasi</span>
+                            <span id="location-count" class="data-count">0</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Kontak Personal</span>
+                            <span id="personal-count" class="data-count">0</span>
+                        </div>
+                        <div class="data-item">
+                            <span class="data-label">Perilaku</span>
+                            <span id="behavior-count" class="data-count">0</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="fingerprint-section">
+                    <p class="eyebrow">06 / Sidik Jari</p>
+                    <h2>Digital Fingerprint Anda</h2>
+                    <div class="fingerprint-display" id="fingerprint">
+                        <canvas id="fingerprintCanvas"></canvas>
+                    </div>
+                    <p class="fingerprint-info">Setiap aktivitas membuat pola unik yang bisa melacak Anda</p>
+                </section>
+
+                <section class="details-section">
+                    <p class="eyebrow">07 / Transkrip</p>
+                    <h2>Detail Data yang Dikumpulkan</h2>
+                    <div id="details-list" class="details-list"></div>
+                </section>
+
+                <section class="insights-section">
+                    <p class="eyebrow amber">08 / Analisis</p>
+                    <h2>Apa Kata Data Anda</h2>
+                    <p class="section-desc">Inilah yang bisa dilakukan dengan data yang Anda tinggalkan:</p>
+                    <div id="insights" class="insights"></div>
+                </section>
+
+                <section class="consequences-section">
+                    <p class="eyebrow amber">09 / Konsekuensi</p>
+                    <h2>Kemana Data Itu Pergi</h2>
+                    <p class="section-desc">Data yang terkumpul bisa digunakan untuk:</p>
+                    <div class="consequences-grid">
+                        <div class="consequence-card">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-alert"/></svg></div>
+                            <h4>Manipulasi Harga</h4>
+                            <p>E-commerce menaikkan harga berdasarkan riwayat belanja dan kemampuan finansial Anda</p>
+                        </div>
+                        <div class="consequence-card">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-alert"/></svg></div>
+                            <h4>Influencing</h4>
+                            <p>Kampanye direkayasa untuk mempengaruhi opini politik dan pilihan Anda</p>
+                        </div>
+                        <div class="consequence-card">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-alert"/></svg></div>
+                            <h4>Stalking</h4>
+                            <p>Orang jahat bisa mengetahui rumah, kantor, jadwal, dan rutinitas Anda</p>
+                        </div>
+                        <div class="consequence-card">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-alert"/></svg></div>
+                            <h4>Diskriminasi</h4>
+                            <p>Ditolak pinjaman/asuransi karena profil data yang dinilai berisiko</p>
+                        </div>
+                        <div class="consequence-card">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-alert"/></svg></div>
+                            <h4>Social Engineering</h4>
+                            <p>Data dijadikan umpan pancing untuk phishing dan scam berbasis data pribadi</p>
+                        </div>
+                        <div class="consequence-card">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-alert"/></svg></div>
+                            <h4>Predatory Marketing</h4>
+                            <p>Ditargetkan dengan penawaran yang memanfaatkan kelemahan dan kebiasaan Anda</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="insights-section">
+                    <p class="eyebrow">10 / Edukasi</p>
+                    <h2>Apa yang Harus Anda Ketahui</h2>
+                    <p class="section-desc">Pemahaman penting tentang jejak digital dan privasi internet:</p>
+                    <div class="education-items">
+                        <div class="education-item">
+                            <div><h4>Digital Fingerprinting</h4>
+                            <p>Browser Anda punya "sidik jari" unik berdasarkan OS, browser, plugin, font, resolusi layar. Kombinasi ini 95%+ unik dan bisa dilacak tanpa cookie atau login.</p></div>
+                        </div>
+                        <div class="education-item">
+                            <div><h4>Third-Party Tracking</h4>
+                            <p>Iklan dan analytics di situs mengikuti Anda ke situs lain. Jaringan iklan seperti Google, Facebook, Amazon mengumpulkan data profil Anda lintas website.</p></div>
+                        </div>
+                        <div class="education-item">
+                            <div><h4>Data Brokers</h4>
+                            <p>Perusahaan mengumpulkan, mengorganisir, dan menjual profil digital Anda. Data broker memiliki informasi lebih lengkap tentang Anda daripada teman-teman Anda.</p></div>
+                        </div>
+                        <div class="education-item">
+                            <div><h4>Location Data</h4>
+                            <p>GPS, WiFi, dan IP address bisa menentukan lokasi Anda dengan akurasi meter. Aplikasi dengan izin lokasi bisa melacak movement history Anda.</p></div>
+                        </div>
+                        <div class="education-item">
+                            <div><h4>Data Correlation</h4>
+                            <p>Platform menghubungkan semua identitas Anda (email, phone, username) menjadi satu profil master untuk gambaran 360° tentang Anda.</p></div>
+                        </div>
+                        <div class="education-item">
+                            <div><h4>Persistence</h4>
+                            <p>Data Anda tidak hilang. Diarsip, dianalisis, dan bisa dipicu kembali bertahun-tahun kemudian untuk keperluan baru yang Anda tak tahu.</p></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="tips-section">
+                    <p class="eyebrow">11 / Proteksi</p>
+                    <h2>Langkah Perlindungan Diri</h2>
+                    <p class="section-desc">Langkah-langkah nyata melindungi privasi Anda:</p>
+                    <div class="tips-list">
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-shield"/></svg></div>
+                            <h4>VPN &amp; HTTPS</h4>
+                            <p>Gunakan VPN terpercaya untuk enkripsi traffic. Pastikan URL ada https://</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-eye"/></svg></div>
+                            <h4>Privacy Mode</h4>
+                            <p>Gunakan incognito/private browsing untuk aktivitas sensitif</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-share"/></svg></div>
+                            <h4>Atur Medsos</h4>
+                            <p>Batasi audience postingan. Hindari tag lokasi real-time</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-scan"/></svg></div>
+                            <h4>Review App Permissions</h4>
+                            <p>Tinjau izin aplikasi: lokasi, kontak, storage, kamera</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-unlock"/></svg></div>
+                            <h4>Ad Blocker &amp; Tracker</h4>
+                            <p>Install uBlock Origin, Privacy Badger untuk blokir pelacak</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-mail"/></svg></div>
+                            <h4>Baca Kebijakan</h4>
+                            <p>Pahami EULA sebelum instal aplikasi. Cari kata kunci: "sell", "share", "third-party"</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-target"/></svg></div>
+                            <h4>Regular Cleanup</h4>
+                            <p>Hapus history, cookies, cache secara berkala. Gunakan tools like CCleaner</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-shield"/></svg></div>
+                            <h4>2FA &amp; Strong Password</h4>
+                            <p>Aktifkan 2FA di semua akun. Gunakan password manager untuk password unik</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-search"/></svg></div>
+                            <h4>Minimal Data</h4>
+                            <p>Minimalisir data pribadi yang dibagikan. Jangan pakai info asli untuk akun non-essential</p>
+                        </div>
+                        <div class="tip">
+                            <div class="card-top"><span class="card-tag"></span><svg class="ic"><use href="#i-play"/></svg></div>
+                            <h4>Browser Extensions</h4>
+                            <p>Gunakan DuckDuckGo Privacy Essentials, E-mail Self-Destruct untuk proteksi otomatis</p>
+                        </div>
+                    </div>
+                </section>
+
+                <button id="resetBtn" class="btn-secondary">Ulang Simulasi</button>
+            </div>
+
+            <section class="developer-section hidden">
+                <p class="eyebrow">12 / Penyidik</p>
+                <h2>Tentang Pengembang</h2>
+                <div class="developer-group-card">
+                    <div class="group-header">
+                        <h3>Tim Pengembang</h3>
+                        <p class="group-subtitle">Project Akhir: <strong>Jejak Digital - Simulasi Interaktif</strong></p>
+                        <p class="group-desc">Mahasiswa Teknologi Rekayasa Multimedia — Indonesia</p>
+                    </div>
+                    <div class="team-grid">
+                        <div class="team-member">
+                            <div class="member-avatar">
+                                <img src="foto-profile.jpeg" alt="Muhammad Jamaluddin">
+                            </div>
+                            <h4>Muhammad Jamaluddin</h4>
+                            <p class="member-role">Full Stack Developer</p>
+                            <div class="member-tech">
+                                <span class="mini-badge">HTML5</span>
+                                <span class="mini-badge">CSS3</span>
+                                <span class="mini-badge">JavaScript</span>
+                                <span class="mini-badge">API</span>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">
+                                <img src="https://api.dicebear.com/9.x/bottts/svg?seed=Muksalmina&backgroundColor=1e1b4b,312e81&eyes=dizzy,happy&mouth=smile02" alt="Muksalmina">
+                            </div>
+                            <h4>Muksalmina</h4>
+                            <p class="member-role">Konsep &amp; Ide</p>
+                            <div class="member-tech">
+                                <span class="mini-badge">Brainstorming</span>
+                                <span class="mini-badge">Dokumentasi</span>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">
+                                <img src="https://api.dicebear.com/9.x/bottts/svg?seed=Tasya-Kamila&backgroundColor=1e1b4b,312e81&eyes=bulging,happy&mouth=smile01" alt="Tasya Kamila">
+                            </div>
+                            <h4>Tasya Kamila</h4>
+                            <p class="member-role">Layout &amp; Struktur</p>
+                            <div class="member-tech">
+                                <span class="mini-badge">Tata Letak</span>
+                                <span class="mini-badge">Responsif</span>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">
+                                <img src="https://api.dicebear.com/9.x/bottts/svg?seed=Syarifah-Nuristiqh&backgroundColor=1e1b4b,312e81&eyes=eva,sensor&mouth=diagram" alt="Syarifah Nuristiqh Farani">
+                            </div>
+                            <h4>Syarifah Nuristiqh Farani</h4>
+                            <p class="member-role">Materi Edukasi</p>
+                            <div class="member-tech">
+                                <span class="mini-badge">Konten</span>
+                                <span class="mini-badge">Pembelajaran</span>
+                            </div>
+                        </div>
+                        <div class="team-member">
+                            <div class="member-avatar">
+                                <img src="https://api.dicebear.com/9.x/bottts/svg?seed=Aula-Anista&backgroundColor=1e1b4b,312e81&eyes=happy,round&mouth=smile02" alt="Aula Anista">
+                            </div>
+                            <h4>Aula Anista</h4>
+                            <p class="member-role">Analisis Masalah</p>
+                            <div class="member-tech">
+                                <span class="mini-badge">Riset</span>
+                                <span class="mini-badge">Topik</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-bio-section">
+                        <h3>Tentang Project</h3>
+                        <p><strong>Jejak Digital - Simulasi Interaktif</strong></p>
+                        <p>Fokus pada edukasi privasi digital dan kesadaran jejak internet untuk masyarakat. Dikembangkan menggunakan teknologi web modern (HTML5, CSS3, JavaScript) dengan pendekatan interaktif untuk meningkatkan pemahaman tentang data personal dan digital footprint. Project ini dirancang untuk menunjukkan bagaimana data pribadi dikumpulkan secara real-time dan dampaknya terhadap privasi pengguna.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">Geolocation API</span>
+                            <span class="tech-badge">Canvas API</span>
+                            <span class="tech-badge">REST API</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <footer>
+            <button id="developerBtn" class="btn-developer">Buka Berkas Pengembang</button>
+            <p>Berkas JD-2026 — Edukasi Privasi Internet</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
